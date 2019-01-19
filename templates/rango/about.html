@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+{% load staticfiles %}
+<html>
+	<head>
+		<body>
+			<h1>This tutorial has been put together by Jessica</h1>
+			<div>
+				<strong>{{ boldmessage }}</strong><br />
+		
+				<img src="{% static "images/spiritedaway.jpg" %}" 
+			alt="Picture of Chihiro" />
+			</div>
+			<div>
+				<img src="{{MEDIA_URL}}cat.jpg"/>
+			</div>
+		</body>
+	</head>
+</html>
