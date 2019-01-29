@@ -7,7 +7,12 @@ Index
 {% block body_block %}
 <div>
 		<h1>Rango says...</h1>
+		{% if user.is_authenticated %}
+		howdy {{user.username}}!
+		{% else %}
 			hey there partner! 
+		{% endif %}
+		
 		</div>
 
 		<div>
