@@ -102,6 +102,10 @@ AUTH_PASSWORD_VALIDATORS = [
     {
         'NAME': 'django.contrib.auth.password_validation.NumericPasswordValidator',
     },
+    {
+    	'NAME': 'django.contrib.auth.password_validation.MinimumLengthValidator', 'OPTIONS': {'min_length':6,}
+
+    },
 ]
 
 LOGIN_URL = '/rango/login/'
@@ -125,5 +129,5 @@ MEDIA_URL='/media/'
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/1.11/howto/static-files/
 
-STATIC_URL = '/static/images/'
+STATIC_URL = '/static/'
 STATICFILES_DIRS = [STATIC_DIR, ]

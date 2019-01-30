@@ -7,14 +7,14 @@ About
 {% block body_block %}
 			<div>
 				<h1>About Page</h1>
-				This tutorial has been put together by Jessica
-				<strong>{{ boldmessage }}</strong><br />
+				This tutorial has been put together by Jessica!
+				
 				</div>
 						<img src="{% static "images/spiritedaway.jpg" %}" 
 			alt="Picture of Chihiro" />
 			
 			<p>
-				<img src="{{MEDIA_URL}}cat.jpg"/>
+				<img src="{{MEDIA_URL}}cat.jpg" alt="Picture of a cat"/>
 			</p>
 			<p>visits: {{ visits }} </p>
 {% endblock %}
