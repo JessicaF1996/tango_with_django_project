@@ -1,7 +1,6 @@
 from django.shortcuts import render
-from rango.models import Category, Page
-from rango.forms import CategoryForm, PageForm
-from rango.forms import UserForm, UserProfileForm
+from rango.models import Category, Page, UserProfile
+from rango.forms import CategoryForm, PageForm, UserForm, UserProfileForm
 from django.contrib.auth import authenticate, login
 from django.http import HttpResponseRedirect, HttpResponse
 from django.core.urlresolvers import reverse
@@ -76,7 +75,7 @@ def about(request):
 	if request.session.test_cookie_worked():
 		print("TEST COOKIE WORKED!")
 		request.session.delete_test_cookie()
-	context_dict = {'context': ""}
+	context_dict = {'context': "This tutorial has been put together by Jessica"}
 	visitor_cookie_handler(request)
 	context_dict['visits'] = request.session['visits']
 	print(request.method)
