@@ -5,7 +5,7 @@ from django.conf.urls.static import static
 
 urlpatterns = [
     url(r'^$', views.index, name='index'),
-    url(r'^about/$', views.about, name='About'),
+    url(r'^about/$', views.about, name='about'),
     url(r'^add_category/$', views.add_category, name='add_category'),
 
     url(r'^category/(?P<category_name_slug>[\w\-]+)/$',
@@ -20,4 +20,4 @@ urlpatterns = [
     url(r'^restricted/', views.restricted, name='restricted'),
 
     url(r'^logout/$', views.user_logout, name='logout'),
-] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
+] 
