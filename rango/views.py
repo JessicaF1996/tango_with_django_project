@@ -74,7 +74,7 @@ def about(request):
 	if request.session.test_cookie_worked():
 		print("TEST COOKIE WORKED!")
 		request.session.delete_test_cookie()
-	context_dict = {'context': "This tutorial has been put together by Jessica"}
+	context_dict = {}
 	visitor_cookie_handler(request)
 	context_dict['visits'] = request.session['visits']
 	print(request.method)
@@ -120,10 +120,10 @@ def user_login(request):
 				login(request, user)
 				return HttpResponseRedirect(reverse('index'))
 			else:
-				return HttpResponse("Your Rango account is disabled,")
+				return HttpResponse("Your Rango account is disabled.")
 		else:
 			print("Invalid login details: {0}, {1}".format(username, password))
-			return HttpResponse("Invalid login details supplied. Please go back to the login page")
+			return HttpResponse("Invalid login details supplied.")
 
 	else:
 		return render(request, 'rango/login.html', {})
@@ -167,6 +167,9 @@ def visitor_cookie_handler(request):
 	else:
 		request.session['last_visit'] = last_visit_cookie
 	request.session['visits'] = visits
+
+def get_category_list(cat=None):
+	return {'cats': Category.objects.all(), 'act_cat': cat}
 
 
 
