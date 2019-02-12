@@ -8,6 +8,7 @@ from django.contrib.auth.decorators import login_required
 from datetime import datetime
 
 
+@login_required
 def add_category(request):
     form = CategoryForm()
     if request.method == 'POST':
@@ -94,7 +95,6 @@ def register(request):
 			user.save()
 			profile = profile_form.save(commit=False)
 			profile.user = user
-			registered = True
 
 			if 'picture' in request.FILES:
 				profile.picture = request.FILES['picture']
